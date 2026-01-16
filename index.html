@@ -14,6 +14,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     
     <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-light: #3b82f6;
+            --primary-blue-dark: #1d4ed8;
+            --accent-blue: #60a5fa;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --light-gray: #f1f5f9;
+            --medium-gray: #e2e8f0;
+            --text-dark: #1e293b;
+            --text-medium: #475569;
+            --text-light: #64748b;
+            --card-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+            --card-shadow-hover: 0 20px 40px rgba(37, 99, 235, 0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -22,8 +38,8 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #1e0533 0%, #0f172a 100%);
-            color: #e2e8f0;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            color: var(--text-dark);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -40,19 +56,20 @@
         }
 
         .card {
-            background: rgba(30, 41, 59, 0.45);
+            background: var(--white);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid var(--medium-gray);
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+            box-shadow: var(--card-shadow);
         }
 
         .hero {
             padding: 4.5rem 3.5rem 3rem;
             text-align: center;
             position: relative;
+            background: linear-gradient(to bottom, var(--white) 0%, var(--off-white) 100%);
         }
 
         .logo {
@@ -65,29 +82,27 @@
         .logo-icon {
             width: 68px;
             height: 68px;
-            background: linear-gradient(135deg, #7c3aed, #3b82f6);
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.9rem;
-            color: white;
-            box-shadow: 0 8px 25px rgba(124,58,237,0.35);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.25);
         }
 
         .logo-text {
             font-size: 3.2rem;
             font-weight: 800;
             letter-spacing: -1.5px;
-            background: linear-gradient(to right, #c084fc, #60a5fa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary-blue);
         }
 
         .tagline {
             font-size: 1.35rem;
             font-weight: 400;
-            opacity: 0.85;
+            color: var(--text-medium);
             margin-bottom: 2.5rem;
         }
 
@@ -99,13 +114,13 @@
         }
 
         .accent {
-            color: #c084fc;
+            color: var(--primary-blue);
         }
 
         .description {
             font-size: 1.15rem;
             line-height: 1.6;
-            color: #94a3b8;
+            color: var(--text-medium);
             max-width: 680px;
             margin: 0 auto 2.5rem;
         }
@@ -119,30 +134,31 @@
         }
 
         .countdown-item {
-            background: rgba(30,41,59,0.6);
+            background: var(--white);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(167,139,250,0.15);
+            border: 1px solid var(--medium-gray);
             border-radius: 16px;
             padding: 1.4rem 1.8rem;
             min-width: 100px;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .countdown-item:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(124,58,237,0.25);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
         }
 
         .countdown-value {
             font-size: 2.6rem;
             font-weight: 800;
-            color: #e0e7ff;
+            color: var(--primary-blue);
         }
 
         .countdown-label {
             font-size: 0.9rem;
-            color: #94a3b8;
+            color: var(--text-light);
             margin-top: 0.4rem;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -163,24 +179,25 @@
         .form-group {
             display: flex;
             gap: 12px;
-            background: rgba(30,41,59,0.65);
+            background: var(--white);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.07);
+            border: 1px solid var(--medium-gray);
             border-radius: 16px;
             padding: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         input[type="email"] {
             flex: 1;
             background: transparent;
             border: none;
-            color: white;
+            color: var(--text-dark);
             font-size: 1.05rem;
             padding: 0 1.3rem;
         }
 
         input[type="email"]::placeholder {
-            color: #94a3b8;
+            color: var(--text-light);
         }
 
         input[type="email"]:focus {
@@ -188,8 +205,8 @@
         }
 
         .btn {
-            background: linear-gradient(to right, #7c3aed, #3b82f6);
-            color: white;
+            background: linear-gradient(to right, var(--primary-blue), var(--primary-blue-light));
+            color: var(--white);
             border: none;
             border-radius: 12px;
             padding: 0.95rem 2.2rem;
@@ -197,11 +214,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(124,58,237,0.4);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+            background: linear-gradient(to right, var(--primary-blue-dark), var(--primary-blue));
         }
 
         .download-buttons {
@@ -215,24 +234,27 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(30,41,59,0.6);
+            background: var(--white);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--medium-gray);
             border-radius: 16px;
             padding: 1rem 1.6rem;
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
             transition: all 0.3s ease;
             min-width: 220px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .store-btn:hover {
             transform: translateY(-5px);
-            background: rgba(50,61,79,0.7);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.15);
+            border-color: var(--primary-blue-light);
         }
 
         .store-icon {
             font-size: 2.1rem;
+            color: var(--primary-blue);
         }
 
         .store-text {
@@ -242,12 +264,13 @@
 
         .store-small {
             font-size: 0.82rem;
-            opacity: 0.8;
+            color: var(--text-light);
         }
 
         .store-large {
             font-size: 1.15rem;
             font-weight: 600;
+            color: var(--text-dark);
         }
 
         .features-grid {
@@ -259,31 +282,35 @@
         }
 
         .feature {
-            background: rgba(30,41,59,0.4);
+            background: var(--white);
             backdrop-filter: blur(8px);
-            border: 1px solid rgba(167,139,250,0.12);
+            border: 1px solid var(--medium-gray);
             border-radius: 16px;
             padding: 1.8rem;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         .feature:hover {
             transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary-blue-light);
         }
 
         .feature-icon {
             font-size: 1.8rem;
-            color: #c084fc;
+            color: var(--primary-blue);
             margin-bottom: 1rem;
         }
 
         .feature h3 {
             font-size: 1.25rem;
             margin-bottom: 0.6rem;
+            color: var(--text-dark);
         }
 
         .feature p {
-            color: #94a3b8;
+            color: var(--text-medium);
             font-size: 0.98rem;
             line-height: 1.5;
         }
@@ -293,30 +320,37 @@
             justify-content: center;
             gap: 1.8rem;
             padding: 2.5rem 0;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid var(--medium-gray);
+            background: var(--off-white);
         }
 
         .social a {
-            color: #94a3b8;
+            color: var(--text-light);
             font-size: 1.6rem;
             transition: all 0.3s;
         }
 
         .social a:hover {
-            color: #c084fc;
+            color: var(--primary-blue);
             transform: translateY(-4px);
         }
 
         .footer {
             text-align: center;
             padding: 1.8rem;
-            color: #64748b;
+            color: var(--text-light);
             font-size: 0.9rem;
+            background: var(--off-white);
         }
 
         .footer a {
-            color: #a78bfa;
+            color: var(--primary-blue);
             text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -325,11 +359,14 @@
             .logo-text { font-size: 2.6rem; }
             .countdown-item { min-width: 85px; padding: 1.1rem 1.3rem; }
             .countdown-value { font-size: 2.1rem; }
+            .features-grid { padding: 0 1.5rem 3rem; }
         }
 
         @media (max-width: 480px) {
             .logo { flex-direction: column; gap: 0.8rem; }
             .logo-text { font-size: 2.4rem; }
+            .download-buttons { flex-direction: column; align-items: center; }
+            .store-btn { width: 100%; max-width: 280px; }
         }
     </style>
 </head>
@@ -339,10 +376,23 @@
     <div class="card">
 
         <section class="hero">
-            <div class="logo">
-                <div class="logo-icon"><i class="fas fa-bolt"></i></div>
-                <div class="logo-text">Cynthia</div>
+    
+              <div class="logo">
+  <img src="logo cynthia.png" alt="Cynthia Logo" class="logo-image">
+
             </div>
+            <style>
+                .logo {
+
+  align-items: center;
+}
+
+.logo-image {
+  height: 167px; /* adjust as needed */
+  width: auto;
+}
+
+            </style>
 
             <div class="tagline">Modern. Secure. Effortless Bill Payments</div>
 
